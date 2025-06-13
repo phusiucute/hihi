@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết tài liệu</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold fs-3" href="index.html"><img src="logo.svg" style="width:36px;vertical-align:middle;margin-right:8px;">Share Tài Liệu</a>
+      <div id="user-nav" class="ms-auto"></div>
+    </div>
+  </nav>
+  <div class="card-detail">
+    <div id="doc-detail">
+      <!-- PHẦN REACTION -->
+      <div class="reaction-total"><i class="bi bi-hand-thumbs-up"></i> Đánh giá (392)</div>
+      <div class="reaction-group mb-3">
+        <div class="reaction-item"><span class="reaction-emoji">❤️</span><span class="reaction-count">348</span></div>
+        <div class="reaction-item"><span class="reaction-emoji">😍</span><span class="reaction-count">22</span></div>
+        <div class="reaction-item"><span class="reaction-emoji">👍</span><span class="reaction-count">11</span></div>
+        <div class="reaction-item"><span class="reaction-emoji">👎</span><span class="reaction-count">5</span></div>
+        <div class="reaction-item"><span class="reaction-emoji">😮</span><span class="reaction-count">6</span></div>
+      </div>
+      <!-- HẾT PHẦN REACTION -->
+
+      <!-- PHẦN COMMENT -->
+      <div class="comment-meta"><i class="bi bi-chat-dots"></i> Bình luận</div>
+      <div id="comments-list" class="mb-2"></div>
+      <form id="commentForm" autocomplete="off" class="comment-box-ui">
+        <img src="avatar-default.png" alt="avatar">
+        <textarea id="commentContent" maxlength="1000" placeholder="Viết bình luận dưới tên Admin..." required></textarea>
+        <button class="send-btn" type="submit">Gửi</button>
+      </form>
+      <!-- HẾT PHẦN COMMENT -->
+    </div>
+  </div>
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

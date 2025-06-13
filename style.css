@@ -1,0 +1,97 @@
+/* ... các style khác ... */
+
+.reaction-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.reaction-group .reaction-item {
+  background: #f4f6f8;
+  border-radius: 16px;
+  padding: 5px 18px 5px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  min-width: 56px;
+  transition: background 0.18s;
+  cursor: pointer;
+  border: 2px solid transparent;
+  user-select: none;
+}
+.reaction-group .reaction-item:hover {
+  background: #e9f2fc;
+  border: 2px solid #89cafe;
+}
+.reaction-group .reaction-emoji {
+  font-size: 1.4em;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.reaction-group .reaction-count {
+  font-size: 1.15em;
+  font-weight: 500;
+  color: #222;
+}
+.reaction-group .reaction-label {
+  color: #687887;
+  font-weight: 500;
+  margin-right: 12px;
+  font-size: 1em;
+}
+
+.reaction-total {
+  color: #687887;
+  margin-bottom: 8px;
+  font-size: 1.04em;
+  font-weight: 500;
+}
+
+.comment-box-ui {
+  background: #f5f6fa;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+  box-shadow: 0 1px 4px rgba(41,56,135,0.09);
+}
+.comment-box-ui img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.comment-box-ui textarea {
+  flex: 1;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  resize: none;
+  min-height: 32px;
+  font-size: 1em;
+  outline: none;
+}
+.comment-box-ui .send-btn {
+  background: #15b9ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 8px 20px;
+  margin-left: 8px;
+  transition: background 0.2s;
+}
+.comment-box-ui .send-btn:hover {
+  background: #0d8de6;
+}
+
+.comment-meta {
+  font-size: 0.95em;
+  color: #909ba6;
+  margin-bottom: 4px;
+  font-weight: 500;
+}

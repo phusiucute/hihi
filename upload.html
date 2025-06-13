@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng bài mới</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📚 Share Tài Liệu</a>
+      <div id="user-nav"></div>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <form id="uploadForm" enctype="multipart/form-data" class="mx-auto" style="max-width:600px;">
+      <h2>Đăng bài mới</h2>
+      <div class="mb-2">
+        <label class="form-label fw-bold">Tiêu đề</label>
+        <input type="text" class="form-control" id="title" required>
+      </div>
+      <div class="mb-2">
+        <label class="form-label fw-bold">Mô tả</label>
+        <textarea class="form-control" id="description" rows="3"></textarea>
+      </div>
+      <div class="mb-2">
+        <label class="form-label fw-bold">Khối lớp</label>
+        <select class="form-select" id="grade" required>
+          <option value="">Chọn khối lớp</option>
+          <option value="12">Lớp 12</option>
+          <option value="11">Lớp 11</option>
+          <option value="10">Lớp 10</option>
+          <option value="other">Tài liệu khác</option>
+          <option value="qa">Hỏi đáp</option>
+        </select>
+      </div>
+      <div class="mb-2" id="subject-group">
+        <label class="form-label fw-bold">Môn học</label>
+        <select class="form-select" id="subject">
+          <option value="Toán">Toán</option>
+          <option value="Lý">Lý</option>
+          <option value="Hóa">Hóa</option>
+          <option value="Sinh">Sinh</option>
+          <option value="Sử">Sử</option>
+          <option value="Địa">Địa</option>
+          <option value="Khác">Khác</option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <label class="form-label fw-bold">Ảnh (có thể chọn nhiều)</label>
+        <input type="file" class="form-control" id="images" accept="image/*" multiple>
+        <div id="preview-images" class="mt-2"></div>
+      </div>
+      <div class="mb-2">
+        <label class="form-label fw-bold">Link tài liệu</label>
+        <input type="url" class="form-control" id="doclink" placeholder="https://...">
+      </div>
+      <button class="btn btn-success w-100 mt-2" type="submit">Đăng</button>
+      <div id="uploadMsg" class="msg mt-3"></div>
+    </form>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const gradeEl = document.getElementById('grade');
+      const subjectGroup = document.getElementById('subject-group');
+      gradeEl.onchange = function() {
+        if (gradeEl.value === 'other' || gradeEl.value === 'qa') subjectGroup.style.display = 'none';
+        else subjectGroup.style.display = '';
+      }
+      // Preview ảnh
+      const imagesInput = document.getElementById('images');
+      imagesInput.onchange = function() {
+        const preview = document.getElementById('preview-images');
+        preview.innerHTML = '';
+        Array.from(imagesInput.files).forEach(file => {
+          const reader = new FileReader();
+          reader.onload = e => {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.maxWidth = '120px';
+            img.style.margin = '4px';
+            preview.appendChild(img);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+    });
+  </script>
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

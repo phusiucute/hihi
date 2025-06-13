@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📚 Share Tài Liệu</a>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <form id="loginForm" class="mx-auto" style="max-width:400px;">
+      <h2>Đăng nhập</h2>
+      <input type="text" class="form-control my-2" id="username" placeholder="Tài khoản" required>
+      <input type="password" class="form-control my-2" id="password" placeholder="Mật khẩu" required>
+      <button class="btn btn-primary w-100 mt-2" type="submit">Đăng nhập</button>
+      <div class="mt-2"><a href="register.html">Đăng ký tài khoản</a></div>
+      <div id="loginMsg" class="msg mt-2"></div>
+    </form>
+  </div>
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
